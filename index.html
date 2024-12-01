@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlendSpot - Tech Reviews</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Optional: Add custom styles */
+    .navbar {
+      background-color: #343a40; /* Dark background color */
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .nav-link {
+      color: #fff;
+    }
+    .nav-link:hover {
+      color: #FFD700; /* Golden color on hover */
+    }
+    .search-bar input {
+      width: 200px;
+    }
+     /* Hero Section Styles */
+     .hero {
+      background: linear-gradient(120deg, #232323, #121212); /* Gradient background */
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      color: #b0b0b0;
+    }
+    .hero-buttons .btn {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .btn-primary {
+      background-color: #FFD700; /* Gold */
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #ffcc33;
+    }
+    .btn-secondary {
+      background-color: transparent;
+      color: #FFD700;
+      border: 2px solid #FFD700;
+    }
+    .btn-secondary:hover {
+      background-color: #FFD700;
+      color: #000;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 10px;
+      animation: slideIn 1s ease-out;
+    }
+
+    /* Keyframe Animation */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* General Section Styling */
+.latest-reviews {
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.latest-reviews h2 {
+  font-size: 2.5rem; /* Larger size for section title */
+  color: #212121; /* Dark charcoal for strong contrast */
+}
+
+.latest-reviews p {
+  font-size: 1rem;
+  color: #757575; /* Muted gray for secondary emphasis */
+}
+
+/* Review Cards Styling */
+.latest-reviews .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+  border-radius: 10px; /* Subtle rounded corners */
+  overflow: hidden; /* Ensure content fits within rounded corners */
+}
+
+.latest-reviews .card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Add depth on hover */
+}
+
+.latest-reviews .card-img-top {
+  height: 200px; /* Consistent height for images */
+  object-fit: cover; /* Maintain aspect ratio and crop overflow */
+  border-bottom: 3px solid #007bff; /* Accent color divider below the image */
+}
+
+.latest-reviews .card-title {
+  font-size: 1.25rem;
+  color: #212121; /* Dark color for visibility */
+  margin-bottom: 0.5rem;
+}
+
+.latest-reviews .card-text {
+  font-size: 0.9rem;
+  color: #616161; /* Slightly darker gray than the subtitle */
+  margin-bottom: 1rem; /* Spacing before the rating and button */
+}
+
+/* Rating and Button Styling */
+.latest-reviews .text-warning {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.latest-reviews .btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.latest-reviews .btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.latest-reviews .btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.latest-reviews .btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .latest-reviews h2 {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+  }
+
+  .latest-reviews .card-img-top {
+    height: 180px; /* Reduce image height on smaller screens */
+  }
+
+  .latest-reviews .btn-outline-primary {
+    font-size: 0.9rem; /* Slightly smaller button text */
+  }
+}
+/* General Section Styling */
+.detailed-features {
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.detailed-features h2 {
+  font-size: 2.5rem; /* Prominent section title */
+  color: #212121; /* Dark color for strong visibility */
+}
+
+.detailed-features p {
+  font-size: 1rem;
+  color: #757575; /* Muted gray for subtitle */
+}
+
+/* Feature List Styling */
+.detailed-features ul {
+  padding: 0; /* Remove default padding */
+}
+
+.detailed-features li {
+  font-size: 1rem;
+  color: #616161; /* Slightly darker gray for feature text */
+  display: flex;
+  align-items: center; /* Align text and icon */
+}
+
+.detailed-features li i {
+  font-size: 1.5rem; /* Icon size */
+  margin-right: 0.5rem; /* Spacing between icon and text */
+}
+
+/* Button Styling */
+.detailed-features .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px; /* Smooth edges */
+}
+
+.detailed-features .btn-primary:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Image Styling */
+.detailed-features img {
+  border-radius: 10px; /* Smooth corners for the image */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: transform 0.3s ease; /* Add interaction */
+}
+
+.detailed-features img:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .detailed-features h2 {
+    font-size: 2rem; /* Reduce heading size for smaller screens */
+  }
+
+  .detailed-features img {
+    width: 100%; /* Ensure image adapts to smaller screen widths */
+  }
+
+  .detailed-features li {
+    font-size: 0.9rem; /* Adjust feature list size */
+  }
+
+  .detailed-features .btn-primary {
+    font-size: 0.9rem; /* Slightly smaller button size */
+  }
+}
+/* General Section Styling */
+.popular-categories {
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+.popular-categories h2 {
+  font-size: 2.5rem;
+  color: #212121; /* Bold and dark for visibility */
+}
+
+.popular-categories p {
+  font-size: 1rem;
+  color: #757575; /* Subtle gray for subtitle */
+}
+
+/* Category Card Styling */
+.category-card {
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff; /* Clean white background */
+}
+
+.category-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add a shadow effect */
+}
+
+.category-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.category-card h5 {
+  font-size: 1.25rem;
+  color: #212121; /* Strong contrast for heading */
+}
+
+.category-card p {
+  font-size: 1rem;
+  color: #616161; /* Medium gray for card text */
+}
+
+.category-card .btn-primary {
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.category-card .btn-primary:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+  transform: scale(1.05); /* Subtle scaling effect */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .category-card h5 {
+    font-size: 1rem; /* Adjust heading size */
+  }
+
+  .category-card p {
+    font-size: 0.9rem; /* Smaller text for smaller screens */
+  }
+
+  .category-card .btn-primary {
+    font-size: 0.9rem; /* Smaller button size */
+  }
+}
+
+/* General Section Styling */
+.newsletter-signup {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 50px 0;
+}
+
+.newsletter-signup h2 {
+  font-size: 2.5rem;
+  color: #212121; /* Dark color for text */
+}
+
+.newsletter-signup p {
+  font-size: 1.125rem;
+  color: #757575; /* Light gray for the subtitle */
+}
+
+/* Newsletter Form Styling */
+.newsletter-form .input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-form .form-control {
+  border-radius: 20px 0 0 20px; /* Rounded left side */
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #007bff; /* Blue border */
+  height: 50px;
+}
+
+.newsletter-form .btn-primary {
+  border-radius: 0 20px 20px 0; /* Rounded right side */
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.newsletter-form .btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .newsletter-signup h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .newsletter-signup p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .newsletter-form .form-control {
+    font-size: 0.9rem; /* Adjust input field size */
+  }
+
+  .newsletter-form .btn-primary {
+    font-size: 0.9rem; /* Adjust button size */
+  }
+}
+
+/* About Us Section Styling */
+.about-us {
+  background-color: #ffffff; /* White background for the section */
+  padding: 50px 0;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  color: #212121; /* Dark text color */
+}
+
+.about-us p {
+  font-size: 1.125rem;
+  color: #757575; /* Light gray for body text */
+}
+
+.about-us .row {
+  display: flex;
+  align-items: center;
+}
+
+.about-us .team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-us .team-member h5 {
+  font-size: 1.25rem;
+  color: #212121; /* Dark color for team member names */
+}
+
+.about-us .team-member p {
+  font-size: 1rem;
+  color: #757575; /* Light gray for roles */
+}
+
+.about-us .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .about-us h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .about-us p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .team-member {
+    margin-bottom: 30px; /* Spacing between team members */
+  }
+
+  .team-member img {
+    width: 120px; /* Reduce image size for smaller screens */
+    height: 120px;
+  }
+}
+/* Contact Us Section Styling */
+.contact-us {
+  background-color: #f8f9fa; /* Light background */
+  padding: 50px 0;
+}
+
+.contact-us h2 {
+  font-size: 2.5rem;
+  color: #212121; /* Dark text color */
+}
+
+.contact-us p {
+  font-size: 1.125rem;
+  color: #757575; /* Light gray text for description */
+}
+
+/* Contact Form Styling */
+.contact-form .form-label {
+  font-weight: bold;
+}
+
+.contact-form .form-control {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #007bff; /* Blue border for inputs */
+  margin-bottom: 15px;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.125rem;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Button enlarges slightly on hover */
+}
+
+/* Contact Information Styling */
+.contact-us .col-md-6 h5 {
+  font-size: 1.5rem;
+  color: #212121;
+}
+
+.contact-us .col-md-6 p {
+  font-size: 1rem;
+  color: #757575;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .contact-us h2 {
+    font-size: 2rem; /* Smaller title font */
+  }
+
+  .contact-us p {
+    font-size: 1rem; /* Smaller description font */
+  }
+
+  .contact-form button {
+    font-size: 1rem; /* Smaller button font */
+    padding: 12px 20px; /* Smaller padding */
+  }
+
+  .contact-us .col-md-6 {
+    margin-bottom: 30px; /* Add margin for spacing */
+  }
+}
+
+/* Footer Section Styling */
+.footer {
+  background-color: #212121; /* Dark background for footer */
+  color: #ffffff; /* White text color */
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer h5 {
+  font-size: 1.25rem;
+  color: #ffffff; /* Ensures headings are white */
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #b0b0b0; /* Light gray for paragraphs */
+}
+
+.footer .list-unstyled {
+  padding-left: 0;
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 10px;
+}
+
+.footer .list-unstyled a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.footer .list-unstyled a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+.footer .fab {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.footer .fab:hover {
+  transform: scale(1.2); /* Icons enlarge slightly on hover */
+}
+
+.footer .text-center p {
+  font-size: 0.875rem;
+  color: #b0b0b0; /* Light gray footer text */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer .row {
+    text-align: center;
+  }
+
+  .footer .col-md-4 {
+    margin-bottom: 20px;
+  }
+
+  .footer .fab {
+    font-size: 1.2rem; /* Smaller social icons on mobile */
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="#">BlendSpot</a>
+      
+      <!-- Toggle Button for Mobile View -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mobile Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Laptop Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Apple Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Samsung Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        
+        <!-- Search Bar -->
+        <form class="d-flex search-bar ms-3">
+          <input class="form-control" type="search" placeholder="Search reviews..." aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container d-flex flex-wrap align-items-center">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <h1>Your Go-To Hub for Tech Insights</h1>
+        <p>Dive into detailed reviews of the latest mobiles, laptops, and gadgets from Apple and Samsung. Stay informed, shop smart!</p>
+        <div class="hero-buttons">
+          <a href="#reviews" class="btn btn-primary">Read Reviews</a>
+          <a href="#gadgets" class="btn btn-secondary">Latest Gadgets</a>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="hero-image ms-auto mt-4 mt-lg-0">
+        <img src="https://via.placeholder.com/500x400" alt="Tech Gadgets">
+      </div>
+    </div>
+  </section>
+
+  <section class="popular-categories py-5">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Popular Categories</h2>
+        <p class="text-muted">Explore reviews across our top categories.</p>
+      </div>
+  
+      <!-- Categories Grid -->
+      <div class="row g-4">
+        <!-- Category Card 1 -->
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 shadow">
+            <img src="https://via.placeholder.com/100" alt="Phones" class="mb-3">
+            <h5 class="fw-bold">Phones</h5>
+            <p class="text-muted">Find the latest reviews on smartphones from top brands.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+  
+        <!-- Category Card 2 -->
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 shadow">
+            <img src="https://via.placeholder.com/100" alt="Laptops" class="mb-3">
+            <h5 class="fw-bold">Laptops</h5>
+            <p class="text-muted">Dive into detailed reviews of the newest laptops.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+  
+        <!-- Category Card 3 -->
+        <div class="col-md-4">
+          <div class="category-card text-center p-4 shadow">
+            <img src="https://via.placeholder.com/100" alt="Accessories" class="mb-3">
+            <h5 class="fw-bold">Accessories</h5>
+            <p class="text-muted">Check out reviews on the latest tech accessories.</p>
+            <a href="#" class="btn btn-primary">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section class="detailed-features py-5">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Detailed Product Features</h2>
+        <p class="text-muted">Explore in-depth features and specifications of the latest devices.</p>
+      </div>
+  
+      <!-- Product Features Grid -->
+      <div class="row g-5 align-items-center">
+        <!-- Product Image -->
+        <div class="col-lg-6">
+          <img src="https://via.placeholder.com/600x400" class="img-fluid rounded shadow" alt="Featured Product">
+        </div>
+  
+        <!-- Product Details -->
+        <div class="col-lg-6">
+          <h3 class="fw-bold">iPhone 15 Pro Max</h3>
+          <p class="text-muted mb-4">
+            Experience the power of Apple's latest innovation with the iPhone 15 Pro Max. Featuring the advanced A17 Bionic chip, stunning camera upgrades, and an industry-first titanium design.
+          </p>
+  
+          <!-- Feature List -->
+          <ul class="list-unstyled">
+            <li class="mb-3">
+              <i class="bi bi-cpu-fill text-primary me-2"></i>
+              <strong>Processor:</strong> A17 Bionic Chip
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-camera-fill text-primary me-2"></i>
+              <strong>Camera:</strong> 48MP Triple Lens with 5x Telephoto Zoom
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-battery-full text-primary me-2"></i>
+              <strong>Battery Life:</strong> Up to 29 Hours of Video Playback
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-display-fill text-primary me-2"></i>
+              <strong>Display:</strong> 6.7-inch Super Retina XDR with ProMotion
+            </li>
+          </ul>
+  
+          <!-- CTA Button -->
+          <a href="#" class="btn btn-primary mt-4">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest-reviews py-5 bg-light">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Latest Reviews</h2>
+        <p class="text-muted">Discover our in-depth reviews of the latest gadgets.</p>
+      </div>
+  
+      <!-- Reviews Grid -->
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="iPhone 15">
+            <div class="card-body">
+              <h5 class="card-title">iPhone 15 Pro Max Review</h5>
+              <p class="card-text text-muted">The most powerful iPhone yet, with an innovative A17 chip and enhanced camera.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="text-warning fw-bold">9/10 ★</span>
+                <a href="#" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="Samsung Galaxy Z Fold 5">
+            <div class="card-body">
+              <h5 class="card-title">Samsung Galaxy Z Fold 5 Review</h5>
+              <p class="card-text text-muted">A foldable masterpiece with cutting-edge technology and enhanced durability.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="text-warning fw-bold">8.5/10 ★</span>
+                <a href="#" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="https://via.placeholder.com/300x200" class="card-img-top rounded-top" alt="MacBook Pro 2023">
+            <div class="card-body">
+              <h5 class="card-title">MacBook Pro 2023 Review</h5>
+              <p class="card-text text-muted">A powerhouse laptop designed for creators, delivering top-notch performance.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="text-warning fw-bold">9.5/10 ★</span>
+                <a href="#" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- View All Button -->
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-outline-primary">View All Reviews</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="newsletter-signup py-5 bg-light">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Stay Updated</h2>
+      <p class="text-muted">Get the latest reviews delivered straight to your inbox.</p>
+    </div>
+
+    <!-- Newsletter Form -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form action="#" method="POST" class="newsletter-form">
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Enter your email" aria-label="Enter your email" required>
+            <button class="btn btn-primary" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about-us" class="about-us py-5">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">About BlendSpot</h2>
+        <p class="text-muted">Your trusted source for honest and detailed reviews of mobile, laptops, and tech products.</p>
+      </div>
+  
+      <!-- About Us Content -->
+      <div class="row">
+        <div class="col-md-6">
+          <p>At BlendSpot, we are passionate about providing you with the most up-to-date and unbiased reviews on the latest mobile phones, laptops, and tech products. Our team of experts conducts in-depth research and hands-on testing to deliver insights that matter to you.</p>
+          <p>Whether you’re a tech enthusiast, a casual user, or someone looking to upgrade their devices, our reviews are designed to help you make informed decisions. We aim to simplify the tech world and provide content that’s easy to understand, relevant, and actionable.</p>
+          <p>Join our community of tech lovers and stay ahead of the curve with the latest product news and reviews from BlendSpot.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/500x300" alt="About BlendSpot" class="img-fluid rounded shadow">
+        </div>
+      </div>
+  
+      <!-- Team Members (Optional) -->
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="team-member text-center">
+            <img src="https://via.placeholder.com/150" alt="Team Member" class="img-fluid rounded-circle mb-3">
+            <h5>John Doe</h5>
+            <p class="text-muted">Lead Reviewer</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member text-center">
+            <img src="https://via.placeholder.com/150" alt="Team Member" class="img-fluid rounded-circle mb-3">
+            <h5>Jane Smith</h5>
+            <p class="text-muted">Tech Specialist</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member text-center">
+            <img src="https://via.placeholder.com/150" alt="Team Member" class="img-fluid rounded-circle mb-3">
+            <h5>Michael Lee</h5>
+            <p class="text-muted">Content Writer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-us" class="contact-us py-5 bg-light">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Get in Touch</h2>
+        <p class="text-muted">We'd love to hear from you! Whether you have questions, feedback, or suggestions, feel free to reach out.</p>
+      </div>
+  
+      <!-- Contact Form -->
+      <div class="row">
+        <div class="col-md-6">
+          <form action="#" method="POST" class="contact-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+  
+        <!-- Contact Information (Optional) -->
+        <div class="col-md-6">
+          <h5>Our Office</h5>
+          <p>123 Tech Avenue, Suite 456, Islamabad, Pakistan</p>
+          <h5>Email</h5>
+          <p>contact@blendspot.com</p>
+          <h5>Phone</h5>
+          <p>+92 300 123 4567</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container">
+      <!-- Footer Content -->
+      <div class="row">
+        <!-- About Section -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">About BlendSpot</h5>
+          <p>BlendSpot is your go-to blog for the latest reviews and in-depth articles on mobile phones, laptops, and technology products from Apple, Samsung, and more!</p>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="#reviews" class="text-white text-decoration-none">Reviews</a></li>
+            <li><a href="#contact-us" class="text-white text-decoration-none">Contact Us</a></li>
+          </ul>
+        </div>
+  
+        <!-- Social Media Links -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Follow Us</h5>
+          <ul class="list-unstyled d-flex">
+            <li><a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom Text -->
+      <div class="text-center mt-4">
+        <p class="mb-0">&copy; 2024 BlendSpot. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
